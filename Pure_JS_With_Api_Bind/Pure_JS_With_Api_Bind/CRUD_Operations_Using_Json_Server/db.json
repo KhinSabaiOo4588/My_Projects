@@ -1,0 +1,53 @@
+{
+  "products": [
+    {
+      "id": "21fe",
+      "productCode": "p1",
+      "product": "Jean Dress",
+      "qty": "5",
+      "perPrice": "38000"
+    },
+    {
+      "id": "6625",
+      "productCode": "p2",
+      "product": "High-Wasted Jeans",
+      "qty": "10",
+      "perPrice": "30000"
+    },
+    {
+      "id": "c1f0",
+      "productCode": "p3",
+      "product": "Boyfriend Jeans",
+      "qty": "3",
+      "perPrice": "29000"
+    },
+    {
+      "id": "7d08",
+      "productCode": "p4",
+      "product": "Wide-Leg Jeans",
+      "qty": "7",
+      "perPrice": "31000"
+    },
+    {
+      "productCode": "p5",
+      "product": "Low-Rise Jeans",
+      "qty": "9",
+      "perPrice": "29500",
+      "id": "e20b"
+    },
+    {
+      "productCode": "p6",
+      "product": "Jean Pant",
+      "qty": "5",
+      "perPrice": "28000",
+      "id": "702e"
+    },
+    {
+      "productCode": "p7",
+      "product": "Jean Top",
+      "qty": "5",
+      "perPrice": "18500",
+      "id": "8f20"
+    }
+  ]
+}

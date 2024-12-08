@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--=============== FAVICON ===============-->
+    <link
+      rel="shortcut icon"
+      href="assets/img/favicon.png"
+      type="image/x-icon"
+    />
+
+    <!--=============== REMIXICONS ===============-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css"
+    />
+
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="assets/css/styles.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <title>E-Bbook Website</title>
+  </head>
+  <body>
+    <!--==================== HEADER ====================-->
+    <header class="header" id="header">
+      <nav class="nav container">
+        <a href="#" class="nav__logo">
+          <i class="ri-book-3-line"></i> Free E-Book
+        </a>
+        <div class="nav__menu">
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a href="#home" class="nav__link">
+                <i class="ri-home-line"></i>
+                <span>Home</span>
+              </a>
+            </li>
+
+            <li class="nav__item">
+              <a href="#featured" class="nav__link">
+                <i class="ri-book-3-line"></i>
+                <span>Featured</span>
+              </a>
+            </li>
+
+            <li class="nav__item">
+              <a href="#discount" class="nav__link">
+                <i class="ri-price-tag-3-line"></i>
+                <span>Popular</span>
+              </a>
+            </li>
+
+            <li class="nav__item">
+              <a href="#new" class="nav__link">
+                <i class="ri-bookmark-line"></i>
+                <span>New Books</span>
+              </a>
+            </li>
+
+            <li class="nav__item">
+              <a href="#testimonial" class="nav__link">
+                <i class="ri-message-3-line"></i>
+                <span>Reviews</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="nav__actions">
+          <!-- Search button -->
+          <i class="ri-search-line search-button" id="search-button"></i>
+
+          <!-- Login button -->
+          <i class="ri-user-line login-button" id="login-button"></i>
+
+          <!-- Theme button -->
+          <i class="ri-moon-line change-theme" id="theme-button"></i>
+        </div>
+      </nav>
+    </header>
+
+    <!--==================== SEARCH ====================-->
+    <div class="search" id="search-content">
+      <form action="" class="search__form">
+        <i class="ri-search-line search__icon"></i>
+        <input
+          type="search"
+          placeholder="What are you looking for?"
+          class="search__input"
+        />
+      </form>
+
+      <i class="ri-close-line search__close" id="search-close"></i>
+    </div>
+
+    <!--==================== LOGIN ====================-->
+    <div class="login grid" id="login-content">
+      <form action="" class="login__form grid">
+        <h3 class="login__title">Login In</h3>
+
+        <div class="login__group grid">
+          <div>
+            <label for="login-email" class="login__label">Email</label>
+            <input
+              type="email"
+              placeholder="Write your email"
+              id="login-email"
+              class="login__input"
+            />
+          </div>
+
+          <div>
+            <label for="login-pass" class="login__label">Password</label>
+            <input
+              type="password"
+              placeholder="Enter your password"
+              id="login-pass"
+              class="login__input"
+            />
+          </div>
+        </div>
+
+        <div>
+          <span class="login__signup">
+            You do not have an account? <a href="#">Sign up</a>
+          </span>
+
+          <a href="#" class="login__forgot"> You forgot your password </a>
+
+          <button type="submit" class="login__button button">Log In</button>
+        </div>
+      </form>
+
+      <i class="ri-close-line login__close" id="login-close"></i>
+    </div>
+
+    <!--==================== MAIN ====================-->
+    <main class="main">
+      <!--==================== HOME ====================-->
+      <section class="home section" id="home">
+        <div class="home__container container grid">
+          <div class="home__data">
+            <h1 class="home__title">
+              Discover & <br />
+              Enjoy E-Books
+            </h1>
+
+            <p class="home__description">
+              Explore our vast collection of free e-books spanning numerous genres and authors.
+              With our extensive collection, you can enjoy reading without spending a penny.
+               Start your reading journey today!
+            </p>
+
+            <a href="#category" class="button" id="explore-now">Explore By Genres</a>
+          </div>
+
+          <div class="home__images">
+            <img src="assets/img/Remove3.png" alt="image" class="home__img" />
+          </div>
+        </div>
+      </section>
+
+      <!-- Book Details Modal -->
+      <div id="bookModal" class="modal">
+        <div class="modal-content" id="modalContent">
+            <span class="modal-close" id="modalClose">&times;</span>
+            <!-- Modal content from js -->
+        </div>
+      </div>
+
+      <!--====================SEARCH BOOKS BY CATEGORY SECTION ====================-->
+      <section class="categoryBooks section" id="category">
+        <h2 class="section__title">Search By Genres</h2>
+        <div class="container">
+          <div class="category-list" id="category-list">
+              <!-- Categories From JS -->
+          </div>
+          <div id="bookCategoryContainer" class="category__container">
+              <!-- Book Cards From JS -->
+          </div>
+          <div id="paginationCategoryContainer" class="pagination">
+              <button id="prevPageCategory" class="arrow-button">&lt;</button>
+              <button id="nextPageCategory" class="arrow-button">&gt;</button>
+          </div>
+      </div>
+      </section>
+
+      <!--==================== SERVICES ====================-->
+      <section class="services section" id="services">
+        <h2 class="section__title">Our Services</h2>
+        <div class="services__container container grid">
+          <div class="services__card">
+            <i class="services__icon service__icon1 fa-solid fa-book-open"></i>
+            <h3 class="services__title">Vast Library</h3>
+            <p class="services__description">
+              Access a vast collection of free e-books across various genres and categories.
+            </p>
+          </div>
+      
+          <div class="services__card">
+            <i class="services__icon service__icon2 fa-solid fa-cloud-download-alt"></i>
+            <h3 class="services__title">Easy Downloads</h3>
+            <p class="services__description">
+              Enjoy hassle-free and fast downloads of your favorite e-books.
+            </p>
+          </div>
+      
+          <div class="services__card">
+            <i class="services__icon service__icon3 fa-solid fa-book"></i>
+            <h3 class="services__title">Easy to Carry</h3>
+            <p class="services__description">
+              Take your reading books anywhere, anytime.
+            </p>
+          </div>
+          
+      
+          <div class="services__card">
+            <i class="services__icon service__icon4 fa-solid fa-laptop"></i>
+            <h3 class="services__title">Versatile Access</h3>
+            <p class="services__description">
+              Read and download e-books on the go with electronic devices like tablets, computers, or smartphones.
+            </p>
+          </div>
+        </div>
+      </section>
+      
+      <!--==================== FEATURED BOOKS LIST====================-->
+      <section class="featured section" id="featured">
+        <h2 class="section__title">Featured Books</h2>
+        <div class="container">
+            <div class="featured__container" id="featuredContainer">
+              <!-- Book cards will be dynamically added here -->
+            </div>
+            <div class="pagination" id="paginationContainerFeatured">
+              <button class="arrow-button" id="prevPageFeatured">&lt;</button>
+              <!-- Pagination buttons will be dynamically added here -->
+              <button class="arrow-button" id="nextPageFeatured">&gt;</button>
+            </div>
+        </div>
+      </section>
+
+
+      <!--==================== POPULAR BOOKS LIST====================-->
+      <section class="discount section" id="discount">
+        <div class="discount__container container grid">
+          <div class="discount__data">
+            <h2 class="discount__title section__title">Most popular books published in May 2024</h2>
+
+            <p class="discount__description">
+              Christina Lauren, returns with a delicious new romance between the buttoned-up heir of a grocery chain and his free-spirited artist ex as they fake their relationship in order to receive a massive inheritance.
+              Anna Green thought she was marrying Liam “West” Weston for access to subsidized family
+               housing while at UCLA. She also thought she’d signed divorce papers when the graduation 
+               caps were tossed, and they both went on their merry ways.
+
+            </p>
+
+            <a href="#searchNow" class="button">Search Now</a>
+          </div>
+
+          <div class="discount__images">
+            <img
+              src="assets/img/paradise.jpg"
+              alt="image"
+              class="discount__img-1"
+            />
+            <img
+              src="assets/img/wind.jpg"
+              alt="image"
+              class="discount__img-2"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!--==================== SEARCH BOOKS BY BOOK TITLE SECTION ====================-->
+      <section class="explore section" id="searchNow">
+        <h2 class="section__title">Explore More Books</h2>
+        <div class="container">
+        <div class="controls">
+            <input type="text" id="searchInput" placeholder="Search by book title">
+            <button id="searchBooksButton">Search</button>
+        </div>
+        <div id="bookSearchContainer" class="book-container">
+           <!-- Show book cards from js -->
+        </div>
+        <div id="paginationSearchContainer" class="pagination">
+            <button id="prevPageSearch" class="arrow-button">&lt;</button>
+            <button id="nextPageSearch" class="arrow-button">&gt;</button>
+        </div>
+    </div>
+    </section>
+
+      <!--==================== NEW BOOKS LIST====================-->
+      <section class="new section" id="new">
+        <h2 class="section__title">New Books</h2>
+        <div class="container">
+            <div class="new__container" id="bookContainer">
+              <!-- Book cards from js -->
+            </div>
+            <div class="pagination" id="paginationContainer">
+              <button class="arrow-button" id="prevPage">&lt;</button>
+              <!-- Pagination buttons will be dynamically added here -->
+              <button class="arrow-button" id="nextPage">&gt;</button>
+            </div>
+        </div>
+      </section>
+
+      <!--==================== JOIN ====================-->
+      <section class="join section">
+        <div class="join__container">
+          <img src="assets/img/join-bg.jpg" alt="image" class="join__bg" />
+
+          <div class="join__data container grid">
+            <h2 class="join__title section__title">
+              Subscribe To Receive <br />
+              The Latest Updates
+            </h2>
+
+            <form action="" class="join__form">
+              <input
+                type="email"
+                placeholder="Enter Email"
+                class="join__input"
+              />
+              <button type="submit" class="join__button button">
+                Subscribe
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!--==================== Review ====================-->
+      <section class="testimonial section" id="testimonial">
+        <h2 class="section__title">Customer Reviews</h2>
+        <div class="container">
+          <div class="grid reviews">
+            <div class="review_card">
+              <div class="card_top">
+                <img src="assets/img/testimonial-perfil-1.png" />
+              </div>
+              <div class="card">
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Phasellus imperdiet, nulla et dictum interdum.
+                </p>
+                <div class="review_icon">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                </div>
+              </div>
+            </div>
+            <div class="review_card">
+              <div class="card_top">
+                <img src="assets/img/testimonial-perfil-2.png" />
+              </div>
+              <div class="card">
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Phasellus imperdiet, nulla et dictum interdum.
+                </p>
+                <div class="review_icon">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                </div>
+              </div>
+            </div>
+            <div class="review_card">
+              <div class="card_top">
+                <img src="assets/img/testimonial-perfil-3.png" />
+              </div>
+              <div class="card">
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Phasellus imperdiet, nulla et dictum interdum.
+                </p>
+                <div class="review_icon">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star-half-stroke"></i>
+                </div>
+              </div>
+            </div>
+            <div class="review_card">
+              <div class="card_top">
+                <img src="assets/img/testimonial-perfil-4.png" />
+              </div>
+              <div class="card">
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Phasellus imperdiet, nulla et dictum interdum.
+                </p>
+                <div class="review_icon">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star-half-stroke"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!--==================== FOOTER ====================-->
+    <footer class="footer">
+      <div class="footer__container container grid">
+        <div>
+          <a href="#" class="footer__logo">
+            <i class="ri-book-3-line"></i> Free E-Book
+          </a>
+
+          <p class="footer__description">
+            Find and explore the best <br />
+            eBooks from my website. <br />
+          </p>
+        </div>
+
+        <div class="footer__data grid">
+          <div>
+            <h3 class="footer__title">About</h3>
+
+            <ul class="footer__links">
+              <li>
+                <a href="#" class="footer__link">Awards</a>
+              </li>
+
+              <li>
+                <a href="#" class="footer__link"> FAQs</a>
+              </li>
+
+              <li>
+                <a href="#" class="footer__link">Privacy policy</a>
+              </li>
+
+              <li>
+                <a href="#" class="footer__link">Terms of services</a>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="footer__title">Company</h3>
+
+            <ul class="footer__links">
+              <li>
+                <a href="#" class="footer__link">Blogs</a>
+              </li>
+
+              <li>
+                <a href="#" class="footer__link">Community</a>
+              </li>
+
+              <li>
+                <a href="#" class="footer__link">Our team</a>
+              </li>
+
+              <li>
+                <a href="#" class="footer__link">Help center</a>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="footer__title">Contact</h3>
+
+            <ul class="footer__links">
+              <li>
+                <address class="footer__info">
+                  Aung Myittar 6st <br />
+                  Ywar Ma Kyaung St, Insein
+                </address>
+              </li>
+
+              <li>
+                <address class="footer__info">
+                  freeEbook@email.com <br />
+                  09-458813658
+                </address>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="footer__title">Social</h3>
+
+            <div class="footer__social">
+              <a
+                href="https://www.facebook.com/"
+                target="_blank"
+                class="footer__social-linl"
+              >
+                <i class="ri-facebook-circle-line"></i>
+              </a>
+
+              <a
+                href="https://www.instagram.com/"
+                target="_blank"
+                class="footer__social-linl"
+              >
+                <i class="ri-instagram-line"></i>
+              </a>
+
+              <a
+                href="https://twitter.com/"
+                target="_blank"
+                class="footer__social-linl"
+              >
+                <i class="ri-twitter-x-line"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <span class="footer__copy">
+        Copyright &#169; 2024 All Rights Reserved By Khin Sabai Oo
+      </span>
+    </footer>
+
+    <!--========== SCROLL UP ==========-->
+    <a href="#" class="scrollup" id="scroll-up">
+      <i class="ri-arrow-up-line"></i>
+    </a>
+
+    <!--=============== MAIN JS ===============-->
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

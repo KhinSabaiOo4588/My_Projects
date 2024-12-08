@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sample Page</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Briem+Hand:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Roboto", sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      nav {
+        background-color: #023047;
+        color: #ffb703;
+        padding: 30px 20px;
+        text-align: center;
+      }
+
+      nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        text-align: right;
+      }
+
+      nav ul li {
+        display: inline;
+        margin-left: 20px;
+      }
+
+      a {
+        color: #ffb703;
+        text-decoration: none;
+      }
+
+      nav ul li a:hover {
+        color: #fb8500;
+      }
+
+      .container {
+        background-color: #219ebc;
+        max-width: 100%;
+        margin: auto;
+        padding: 20px;
+      }
+
+      .section {
+        margin-top: 30px;
+        display: flex;
+        align-items: stretch;
+      }
+
+      .section img {
+        width: calc(100% / 3);
+        object-fit: cover;
+      }
+
+      .section p {
+        width: calc(100% / 3 * 2);
+        margin: 0;
+        text-align: justify;
+        line-height: 1.6;
+        text-indent: 30px;
+        color: #03071e;
+      }
+
+      .playfair-display-font {
+        font-family: "Playfair Display", serif;
+      }
+
+      .briem-hand-font {
+        font-family: "Briem Hand", cursive;
+      }
+
+      @media screen and (max-width: 768px) {
+        nav ul {
+          text-align: right;
+        }
+
+        nav ul li {
+          display: block;
+          margin: 10px 0;
+        }
+        .section {
+          flex-direction: column;
+        }
+
+        .section img {
+          width: 100%;
+          margin-right: 0;
+          margin-bottom: 20px;
+        }
+
+        .section p {
+          width: 100%;
+          margin: 0 0 20px 0;
+          text-indent: 20px;
+        }
+      }
+
+      .test article {
+        display: flex;
+        padding-bottom: 30px;
+        text-align: justify;
+      }
+
+      @media screen and (max-width: 500px) {
+        .test article {
+          display: block;
+        }
+      }
+      footer {
+        background-color: #8ecae6;
+        color: #023047;
+        padding: 10px 10px;
+        text-align: center;
+      }
+
+      .social-icons {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .social-icons li {
+        display: inline-block;
+        margin: 0 5px;
+      }
+
+      .social-icons li a {
+        color: #023047;
+        font-size: 20px;
+        text-decoration: none;
+      }
+
+      .social-icons li a:hover {
+        color: #ffb703;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation bar -->
+    <nav>
+      <ul>
+        <li>
+          <a href="#"><i class="fas fa-home"></i> Home</a>
+        </li>
+        <li>
+          <a href="#"><i class="fas fa-info-circle"></i> About</a>
+        </li>
+        <li>
+          <a href="#"><i class="fas fa-tools"></i> Services</a>
+        </li>
+        <li>
+          <a href="#"><i class="fas fa-envelope"></i> Contact</a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="container">
+      <section class="section playfair-display-font">
+        <p>
+          Contrary to popular belief, Lorem Ipsum is not simply random text. It
+          has roots in a piece of classical Latin literature from 45 BC, making
+          it over 2000 years old. Richard McClintock, a Latin professor at
+          Hampden-Sydney College in Virginia, looked up one of the more obscure
+          Latin words, consectetur, from a Lorem Ipsum passage, and going
+          through the cites of the word in classical literature, discovered the
+          undoubtable source. Lorem Ipsum comes from sections 1.10.32 and
+          1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and
+          Evil) by Cicero, written in 45 BC. This book is a treatise on the
+          theory of ethics, very popular during the Renaissance. The first line
+          of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in
+          section 1.10.32.Donec ultricies, sem vitae vestibulum elementum, urna
+          risus feugiat sapien, quis pharetra neque lectus eget metus. Donec
+          vitae pulvinar velit. Nunc ac sagittis dolor. Class aptent taciti
+          sociosqu ad litora torquent per conubia nostra, per inceptos
+          himenaeos. Sed ipsum dui, pulvinar ac tempor at, scelerisque a mi.
+          Quisque hendrerit, lorem a vulputate rhoncus, dolor nibh varius
+          tortor, ut vulputate enim lectus sed lacus. Duis accumsan elit dui,
+          vitae commodo metus mollis eu. Morbi arcu velit, fringilla nec blandit
+          at, laoreet cursus dui. Aliquam dapibus volutpat tempor.
+        </p>
+        <img src="img.png" alt="Placeholder Image" />
+      </section>
+
+      <section class="section briem-hand-font">
+        <img src="image.svg" alt="Placeholder Image" />
+        <p>
+          Contrary to popular belief, Lorem Ipsum is not simply random text. It
+          has roots in a piece of classical Latin literature from 45 BC, making
+          it over 2000 years old. Richard McClintock, a Latin professor at
+          Hampden-Sydney College in Virginia, looked up one of the more obscure
+          Latin words, consectetur, from a Lorem Ipsum passage, and going
+          through the cites of the word in classical literature, discovered the
+          undoubtable source. Lorem Ipsum comes from sections 1.10.32 and
+          1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and
+          Evil) by Cicero, written in 45 BC. This book is a treatise on the
+          theory of ethics, very popular during the Renaissance. The first line
+          of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in
+          section 1.10.32.Donec ultricies, sem vitae vestibulum elementum, urna
+          risus feugiat sapien, quis pharetra neque lectus eget metus. Donec
+          vitae pulvinar velit. Nunc ac sagittis dolor. Class aptent taciti
+          sociosqu ad litora torquent per conubia nostra, per inceptos
+          himenaeos. Sed ipsum dui, pulvinar ac tempor at, scelerisque a mi.
+          Quisque hendrerit, lorem a vulputate rhoncus, dolor nibh varius
+          tortor, ut vulputate enim lectus sed lacus. Duis accumsan elit dui,
+          vitae commodo metus mollis eu. Morbi arcu velit, fringilla nec blandit
+          at, laoreet cursus dui. Aliquam dapibus volutpat tempor.
+        </p>
+      </section>
+
+      <section class="test">
+        <h3>People</h3>
+        <article>
+          <div>
+            <img src="img/content/person1.png" alt="John Doe" />
+          </div>
+          <div>
+            <strong>John Doe, CEO</strong>
+            <p>
+              Duis eu massa ut nulla imperdiet ultrices. Nunc vel sodales purus,
+              sit amet finibus sapien. Sed in mi auctor, laoreet massa id,
+              pellentesque eros. Suspendisse vehicula urna ac libero fringilla,
+              quis consequat enim elementum. Curabitur fermentum ex nisi.
+              Vivamus ac porttitor ex. Sed commodo felis feugiat, pretium leo
+              at, malesuada massa. Nunc molestie eros et sem ornare pulvinar. Ut
+              at turpis turpis.
+            </p>
+          </div>
+        </article>
+        <article>
+          <div>
+            <img src="img/content/person2.png" alt="Jame Smith" />
+          </div>
+          <div>
+            <strong>Jame Smith, CEO</strong>
+            <p>
+              Duis eu massa ut nulla imperdiet ultrices. Nunc vel sodales purus,
+              sit amet finibus sapien. Sed in mi auctor, laoreet massa id,
+              pellentesque eros. Suspendisse vehicula urna ac libero fringilla,
+              quis consequat enim elementum. Curabitur fermentum ex nisi.
+              Vivamus ac porttitor ex. Sed commodo felis feugiat, pretium leo
+              at, malesuada massa. Nunc molestie eros et sem ornare pulvinar. Ut
+              at turpis turpis.
+            </p>
+          </div>
+        </article>
+        <article>
+          <div>
+            <img src="img/content/person3.png" alt="Alexandra" />
+          </div>
+          <div>
+            <strong>ALEXANDRA, CEO</strong>
+            <p>
+              Duis eu massa ut nulla imperdiet ultrices. Nunc vel sodales purus,
+              sit amet finibus sapien. Sed in mi auctor, laoreet massa id,
+              pellentesque eros. Suspendisse vehicula urna ac libero fringilla,
+              quis consequat enim elementum. Curabitur fermentum ex nisi.
+              Vivamus ac porttitor ex. Sed commodo felis feugiat, pretium leo
+              at, malesuada massa. Nunc molestie eros et sem ornare pulvinar. Ut
+              at turpis turpis.
+            </p>
+          </div>
+        </article>
+      </section>
+    </div>
+  </body>
+  <!-- Footer -->
+  <footer>
+    <ul class="social-icons">
+      <li>
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+      </li>
+      <li>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+      </li>
+      <li>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+      </li>
+      <li>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+      </li>
+      <li>
+        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+      </li>
+    </ul>
+    <p>&copy; 2024 &nbsp; Privacy &nbsp; Terms of Service</p>
+  </footer>
+</html>

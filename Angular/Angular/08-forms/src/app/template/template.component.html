@@ -1,0 +1,115 @@
+<h3 class="border-start border-5 border-success ps-2">Template Driven Form</h3>
+<form (ngSubmit)="submitStudentForm()" class="row justify-content-between g-4 mt-3">
+  <div class="col-lg-4 col-md-6 col-12">
+    <label for="name" class="form-label mb-1">Name</label>
+    <input #nameInput="ngModel" [(ngModel)]="studentFormObject.name" required type="text" name="name" id="name"
+      class="form-control" placeholder="Enter name">
+    <div [hidden]="nameInput.valid || nameInput.pristine" class="mt-1 text-danger" style="font-size: 0.85rem;">Name
+      cannot be blank.</div>
+  </div>
+
+  <div class="col-lg-4 col-md-6 col-12">
+    <label for="phone" class="form-label mb-1">Phone</label>
+    <input #phoneInput="ngModel" [(ngModel)]="studentFormObject.phone" type="tel" name="phone" id="phone"
+      class="form-control" required placeholder="Enter phone">
+    <div [hidden]="phoneInput.valid || phoneInput.pristine" class="mt-1 text-danger" style="font-size: 0.85rem;">Phone
+      cannot be blank.</div>
+  </div>
+
+  <div class="col-lg-4 col-md-6 col-12">
+    <label for="email" class="form-label mb-1">Email</label>
+    <input #emailInput="ngModel" [(ngModel)]="studentFormObject.email" type="email" name="email" id="email"
+      class="form-control" required placeholder="Enter email">
+    <div [hidden]="emailInput.valid || emailInput.pristine" class="mt-1 text-danger" style="font-size: 0.85rem;">Email
+      cannot be blank.</div>
+  </div>
+
+  <div class="col-lg-3 col-md-6 col-12">
+    <label for="code" class="form-label mb-1">NRC Code</label>
+    <input [(ngModel)]="selectedCode" type="text" name="code" id="code" class="form-control"
+      placeholder="Enter NRC code" list="codeList">
+    <datalist id="codeList">
+      @for (code of codes; track $index) {
+      <option>{{ code }}</option>
+      }
+    </datalist>
+  </div>
+
+  <div class="col-lg-3 col-md-6 col-12">
+    <label for="suffix" class="form-label mb-1">NRC Suffix</label>
+    <input [(ngModel)]="studentFormObject.suffix" type="text" name="suffix" id="suffix" class="form-control"
+      placeholder="Enter NRC suffix" list="suffixList">
+    <datalist id="suffixList">
+      @for (suffix of suffixes(); track $index) {
+      <option>{{ suffix }}</option>
+      }
+    </datalist>
+  </div>
+
+  <div class="col-lg-3 col-md-6 col-12">
+    <label for="type" class="form-label mb-1">NRC Type</label>
+    <select [(ngModel)]="studentFormObject.type" id="type" name="type" class="form-select">
+      <option value="">Select type</option>
+      @for (type of types; track $index) {
+      <option [value]="type">{{ type }}</option>
+      }
+    </select>
+  </div>
+
+  <div class="col-lg-3 col-md-6 col-12">
+    <label for="nrcNumber" class="form-label mb-1">NRC Number</label>
+    <input [(ngModel)]="studentFormObject.nrcNumber" pattern=" \\d{6}" name="nrcNumber" id="nrcNumber"
+      class="form-control" placeholder="Enter NRC number">
+  </div>
+
+  <div class="col-md-8 col-12" ngModelGroup="studentFormObject().subjects">
+    <label class="form-label">Subjects</label>
+    <div class="mt-1">
+      <input (change)="change($event, 'mya')" [(ngModel)]="studentFormObject.subjects['mya']" type="checkbox" name="mya"
+        value="Myanmar" id="mya" class="form-check-input me-2">
+      <label for="mya" class="form-check-label me-3">Myanmar</label>
+
+      <input (change)="change($event, 'eng')" [(ngModel)]="studentFormObject.subjects['eng']" type="checkbox" name="eng"
+        value="English" id="eng" class="form-check-input me-2">
+      <label for="eng" class="form-check-label me-3">English</label>
+
+      <input (change)="change($event, 'math')" [(ngModel)]="studentFormObject.subjects['math']" type="checkbox"
+        name="math" value="Maths" id="math" class="form-check-input me-2">
+      <label for="math" class="form-check-label me-3">Maths</label>
+
+      <input (change)="change($event, 'che')" [(ngModel)]="studentFormObject.subjects['che']" type="checkbox" name="che"
+        value="Chemistry" id="che" class="form-check-input me-2">
+      <label for="che" class="form-check-label me-3">Chemistry</label>
+
+      <input (change)="change($event, 'phy')" [(ngModel)]="studentFormObject.subjects['phy']" type="checkbox" name="phy"
+        value="Physics" id="phy" class="form-check-input me-2">
+      <label for="phy" class="form-check-label me-3">Physics</label>
+
+      <input (change)="change($event, 'bio')" [(ngModel)]="studentFormObject.subjects['bio']" type="checkbox" name="bio"
+        value="Biology" id="bio" class="form-check-input me-2">
+      <label for="bio" class="form-check-label me-3">Biology</label>
+
+      <input (change)="change($event, 'eco')" [(ngModel)]="studentFormObject.subjects['eco']" type="checkbox" name="eco"
+        value="Ecology" id="eco" class="form-check-input me-2">
+      <label for="eco" class="form-check-label me-3">Ecology</label>
+    </div>
+  </div>
+
+  <div class="col-md-4 col-12">
+    <label class="form-label">Gender</label>
+    <div class="mt-1">
+      <input [(ngModel)]="studentFormObject.gender" type="radio" name="gender" value="Male" id="male"
+        class="form-check-input me-2">
+      <label for="male" class="form-check-label me-3">Male</label>
+
+      <input [(ngModel)]="studentFormObject.gender" type="radio" name="gender" value="Female" id="female"
+        class="form-check-input me-2">
+      <label for="female" class="form-check-label">Female</label>
+    </div>
+  </div>
+
+  <div class="col-12 text-center">
+    <button type="submit" class="btn btn-outline-primary w-25 mt-2">Save Student</button>
+  </div>
+
+</form>

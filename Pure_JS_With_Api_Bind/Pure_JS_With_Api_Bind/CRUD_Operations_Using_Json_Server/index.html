@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crud Operation</title>
+    <link type="text/css" rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="header">
+        <h1>CRUD Operations Using Json Server</h1>   
+    </div>
+    <div class="form-container">
+        <button class="btn" id="newBtn"><i class="fas fa-plus"></i> New Product</button>
+        <form autocomplete="off" onsubmit="onFormSubmit(event)" class="hidden">
+            <div class="form-group">
+                <label for="productCode">Product Code</label>
+                <input type="text" name="productCode" id="productCode" required>
+            </div>
+            <div class="form-group">
+                <label for="product">Product Name</label>
+                <input type="text" name="product" id="product" required>
+            </div>
+            <div class="form-group">
+                <label for="qty">Quantity</label>
+                <input type="number" name="qty" id="qty" required>
+            </div>
+            <div class="form-group">
+                <label for="perPrice">Price</label>
+                <input type="number" name="perPrice" id="perPrice" required>
+            </div>
+
+            <div class="form-action">
+                <input type="submit" value="Submit">
+                <input type="reset" value="Reset">
+            </div>
+        </form>
+    </div>
+
+    <div class="table-container">
+        <table class="list" id="storeList">
+            <thead>
+                <tr>
+                    <th>Product Code</th>
+                    <th>Product Name</th>
+                    <th>Qty</th>
+                    <th>Price</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+
+    <script type="text/javascript" src="./script.js"></script>
+</body>
+</html>

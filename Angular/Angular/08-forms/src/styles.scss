@@ -1,0 +1,17 @@
+/* You can add global styles to this file, and also import other style files */
+
+$enable-rounded: false;
+$bootstrap-icons-font-src: url("../../../node_modules/bootstrap-icons/font/fonts/bootstrap-icons.woff");
+
+@import "../../../node_modules/bootstrap/scss/bootstrap.scss";
+@import "../../../node_modules/bootstrap-icons/font/bootstrap-icons.scss";
+
+.back-btn {
+  padding: 0.2rem;
+}
+
+.back-btn:hover {
+  cursor: pointer;
+  background-color: #ececec;
+  border-radius: 100%;
+}

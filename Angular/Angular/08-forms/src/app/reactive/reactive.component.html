@@ -1,0 +1,73 @@
+<h3 class="border-start border-5 border-success ps-2">Reactive Form</h3>
+<form [formGroup]="programmerForm">
+
+  <div class="row justify-content-between g-3 mb-3" formGroupName="name">
+    <div class="col-md-4 col-sm-6 col-12">
+      <label for="first" class="form-label mb-1">First Name</label>
+      <input formControlName="firstName" type="text" id="first" class="form-control" placeholder="First name">
+    </div>
+
+    <div class="col-md-4 col-sm-6 col-12">
+      <label for="middle" class="form-label mb-1">Middle Name</label>
+      <input formControlName="middleName" type="text" id="middle" class="form-control" placeholder="Middle name">
+    </div>
+
+    <div class="col-md-4 col-sm-6 col-12">
+      <label for="last" class="form-label mb-1">Last Name</label>
+      <input formControlName="lastName" type="text" id="last" class="form-control" placeholder="Last name">
+    </div>
+  </div>
+
+  <div class="row justify-content-between g-3 mb-3" formGroupName="contact">
+    <div class="col-md-4 col-sm-6 col-12">
+      <label for="email" class="form-label mb-1">Email</label>
+      <input formControlName="email" type="email" id="first" class="form-control" placeholder="name@mail.com">
+    </div>
+
+    <div class="col-md-4 col-sm-6 col-12">
+      <label for="phone" class="form-label mb-1">Phone</label>
+      <input formControlName="phone" type="tel" id="phone" class="form-control" placeholder="09239482929">
+    </div>
+
+    <div class="col-md-4 col-sm-6 col-12">
+      <label for="address" class="form-label mb-1">Address</label>
+      <input formControlName="address" type="text" id="address" class="form-control" placeholder="Address">
+    </div>
+  </div>
+
+  <div class="row justify-content-between g-3 mb-3">
+    <div class="col-md-8 col-12" formArrayName="languages">
+      <label class="form-label d-block">Language</label>
+      @for (ctrl of languages.controls; let i = $index, last = $last; track i) {
+      <input [formControlName]="i" type="checkbox" [id]="languageNames[i]" class="form-check-input me-2">
+      <label [for]="languageNames[i]" class="form-check-label" [class.me-3]="!last">{{ languageNames[i] }}</label>
+      }
+    </div>
+
+    <div class="col-md-4 col-12">
+      <label class="form-label">Gender</label>
+      <div class="mt-1">
+        <input formControlName="gender" type="radio" name="gender" value="Male" id="male" class="form-check-input me-2">
+        <label for="male" class="form-check-label me-3">Male</label>
+
+        <input formControlName="gender" type="radio" name="gender" value="Female" id="female"
+          class="form-check-input me-2">
+        <label for="female" class="form-check-label">Female</label>
+      </div>
+    </div>
+
+    <div class="text-center">
+      <button class="btn btn-outline-primary w-25" (click)="submitForm()">Save</button>
+    </div>
+  </div>
+
+</form>
+
+<div class="row">
+  <div class="col-6">
+    <pre>{{ programmerForm.value | json }}</pre>
+  </div>
+  <div class="col-6">
+    <pre>{{ submitedValue | json }}</pre>
+  </div>
+</div>

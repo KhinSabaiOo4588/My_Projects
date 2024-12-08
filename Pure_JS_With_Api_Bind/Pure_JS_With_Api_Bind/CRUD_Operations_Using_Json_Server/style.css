@@ -1,0 +1,156 @@
+body {
+    background-color: #c1121f;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.form-container {
+    width: 90%;
+    margin: 40px auto;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"] {
+    width: 90%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-action {
+    text-align: left;
+}
+
+.form-action input[type="submit"],
+.form-action input[type="reset"] {
+    background: #669bbc;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.form-action input[type="submit"]:hover,
+.form-action input[type="reset"]:hover {
+    background: #fb8500; 
+}
+
+
+.table-container {
+    width: 100%;
+    margin: 40px auto;
+    background: rgba(255, 255, 255, 0.8); 
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+    margin:0;
+    padding:0;
+}
+
+table th,
+table td {
+    border: 1px solid #ccc;
+    padding: 8px 15px;
+}
+
+table th {
+    background-color: #003049;
+    color: #fff;
+}
+
+table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+button {
+    background: #669bbc;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    outline: none;
+}
+
+button:hover {
+    background: #fb8500;
+}
+
+@media (max-width: 767px) {
+    .form-container {
+        width: 80%;
+        margin: 20px auto;
+        align-items: center;
+    }
+
+    .table-container {
+        width: 100%;
+        margin: 0;
+    }
+
+    .form-group input[type="text"],
+    .form-group input[type="number"] {
+        width: 100%;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .form-container,
+    .table-container {
+        width: 80%;
+        margin: 30px auto;
+    }
+}
+
+@media (min-width: 992px) {
+    .form-container {
+        width: 80%;
+        margin: 40px auto;
+    }
+    .table-container {
+        width: 90%;
+        margin: 40px auto;
+    }
+}
+
+.hidden {
+    display: none;
+}
+
+.header h1 {
+    margin: 40px;
+    color: #fdf0d5;
+}
+
+.btn {
+    padding: 10px 10px; 
+    font-size: 16px; 
+    width: 300px;
+}
+
+
+
